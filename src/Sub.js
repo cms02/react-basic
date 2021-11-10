@@ -1,12 +1,10 @@
 import React from 'react';
 
+let num = 10;
+
 const Sub = () => {
-  //함수 제공!!
-  return (
-    <div>
-      <h1>Sub입니다.</h1>
-    </div>
-  );
+  return <div></div>;
 };
 
+export { num }; //default export 는 하나만
 export default Sub;
