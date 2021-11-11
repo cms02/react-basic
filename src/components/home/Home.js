@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { num } from '../../Sub';
+import { Button } from 'react-bootstrap';
 
 // Function 방식(👍)
 // class 방식
@@ -25,6 +25,7 @@ const Home = (props) => {
 
   return (
     <div>
+      <Button variant="primary">Primary</Button>{' '}
       <StyledAddButton user={user}>더하기</StyledAddButton>
       <h1>홈 : {number} </h1>
       <button onClick={() => setNumber(number + 1)}>번호증가</button>
@@ -32,7 +33,7 @@ const Home = (props) => {
         전체 삭제
       </StyledDeleteButton>
       {boards.map((board) => (
-        <h3>
+        <h3 key={board.id}>
           제목: {board.title} 내용: {board.content}
         </h3>
       ))}

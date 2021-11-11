@@ -1,14 +1,13 @@
 import React from 'react';
-import Footer from '../Footer';
-import Header from '../Header';
 import Login from '../login/Login';
 
-const LoginPage = () => {
+const LoginPage = (props) => {
+  const { history } = props;
+  console.log('LoginPage', props.match.params.id);
   return (
     <div>
-      <Header />
-      <Login />
-      <Footer />
+      <button onClick={() => history.push('/')}>뒤로가기</button>
+      <Login />;
     </div>
   );
 };
