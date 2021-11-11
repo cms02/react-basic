@@ -1,0 +1,38 @@
+import React, { useEffect, useState } from 'react';
+import Footer from '../Footer';
+import Header from '../Header';
+import Home from '../home/Home';
+
+const HomePage = () => {
+  //http요청(jquery ajax, fetch, axios(다운))
+  const [boards, setBoards] = useState([]);
+  const [number, setNumber] = useState(0);
+
+  //dependency 빈 배열이면 최초 한번만 실행
+  useEffect(() => {
+    //다운로드 가정 = fetch(), axios(), ajax()
+    let data = [
+      { id: 4, title: '제목1', content: '내용1' },
+      { id: 2, title: '제목2', content: '내용2' },
+      { id: 3, title: '제목3', content: '내용3' },
+    ];
+
+    // 빈데이터
+    setBoards([...data]);
+  }, []);
+
+  return (
+    <div>
+      <Header />
+      <Home
+        boards={boards}
+        setBoards={setBoards}
+        setNumber={setNumber}
+        number={number}
+      />
+      <Footer />
+    </div>
+  );
+};
+
+export default HomePage;
