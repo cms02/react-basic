@@ -1,25 +1,22 @@
+//글쓰기, 글삭제, 글목록보기
+import './App.css';
 import React, { useState } from 'react';
-
-import Info from './Info';
-
-const initEmployee = [
-    { id: 1, name: '홍길동', dept: '영업부' },
-    { id: 2, name: '유관순', dept: '영업부' },
-    { id: 3, name: '강동현', dept: '대표' },
-];
+import Top from './components/Top';
+import Bottom from './components/Bottom';
 
 function App() {
-    const [employee, setEmployee] = useState(initEmployee);
-    const addEmployee = (person) => {
-        // person = {id: xxx, name:asdads, dept: dadfadf}
-        setEmployee([...employee, person]);
-    };
+  const [number, setNumber] = useState(1);
 
-    return (
-        <div className='App'>
-            <Info employee={employee} addEmployee={addEmployee} />
-        </div>
-    );
+  const addNumber = () => {
+    setNumber(number + 1);
+  };
+
+  return (
+    <div className="container">
+      <h1>최상단 화면</h1>
+      <Top number={number} />
+      <Bottom addNumber={addNumber} />
+    </div>
+  );
 }
-
 export default App;
