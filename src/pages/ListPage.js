@@ -4,9 +4,9 @@ import styled from 'styled-components';
 const StyledItemBoxDiv = styled.div`
   display: flex;
   justify-content: space-between;
-  border: 1px solid black;
+  border: 3px solid black;
   padding: 10px;
-  height: 100px;
+  height: 50px;
   margin: 20px;
   align-items: center;
 `;
